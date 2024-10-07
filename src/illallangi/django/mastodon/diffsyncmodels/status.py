@@ -11,6 +11,8 @@ Methods:
     __str__(): Returns a string representation of the Status instance in the format "Status {id}".
 """
 
+from datetime import datetime
+
 import diffsync
 
 from illallangi.django.mastodon.models.status import Status as ModelStatus
@@ -34,7 +36,7 @@ class Status(
     pk: int
     url: str
     content: str
-    datetime: str
+    datetime: datetime
 
     _modelname = "Status"
     _identifiers = ("url",)

@@ -46,6 +46,6 @@ class MastodonAdapter(diffsync.Adapter):
                     pk=obj.pk,
                     url=obj.url,
                     content=obj.content,
-                    datetime=obj.datetime.isoformat(),
+                    datetime=obj.datetime,
                 ),
             )
