@@ -1,15 +1,3 @@
-"""
-Render the status HTML page with breadcrumbs.
-
-This view handles GET requests and renders the status HTML page. It includes
-breadcrumbs for navigation, and alternate links for different content types.
-
-Args:
-    request (HttpRequest): The HTTP request object.
-Returns:
-    HttpResponse: The rendered HTML response.
-"""
-
 import calendar
 
 from django.contrib.humanize.templatetags.humanize import ordinal
@@ -27,16 +15,6 @@ def status_html(
     status_slug: str,
     **_: dict,
 ) -> render:
-    """
-    Render the status HTML page with a status object and related metadata.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-    Returns:
-        render: The rendered HTML page.
-    Raises:
-        NotImplementedError: This function is not yet implemented.
-    """
     objects = Status.objects.filter(sqid=status_slug)
 
     if objects.count() > 1:
